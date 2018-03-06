@@ -438,7 +438,8 @@ class ReactPhoneInput extends React.Component {
       }
 
       if (this.props.onChange) {
-        this.props.onChange(this.state.formattedNumber);
+        console.log(event.target.value);
+        this.props.onChange(this.state.formattedNumber, event.target.value);
       }
     });
   }
