@@ -379,6 +379,7 @@ class ReactPhoneInput extends React.Component {
     let formattedNumber = this.props.disableCountryCode ? '' : '+';
     let newSelectedCountry = this.state.selectedCountry;
     let freezeSelection = this.state.freezeSelection;
+    let number = event.target.value;
 
     //Does not exceed 16 digit phone number limit
     if (event.target.value.replace(/\D/g, '').length > 16) {
@@ -438,8 +439,8 @@ class ReactPhoneInput extends React.Component {
       }
 
       if (this.props.onChange) {
-        console.log(event.target.value);
-        this.props.onChange(this.state.formattedNumber, event.target.value);
+        console.log(number);
+        this.props.onChange(this.state.formattedNumber, number);
       }
     });
   }
